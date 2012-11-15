@@ -1,0 +1,282 @@
+% Copyright 2012 Oz Nahum Tiram <nahumoz@gmail.com>
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+
+\documentclass[a4papper,overlapped,line]{res}
+% \documentclass[a4papper,margin,line]{res}
+\newsectionwidth{.7cm}
+\usepackage{color}
+\definecolor{SOrange}{rgb}{1,0.44,0.04}
+
+\usepackage{scalefnt}
+
+\usepackage{tikz}
+\newcommand{\mytag}[1]{
+\begin{tikzpicture}[baseline={(TAG.base)}]
+  \node[draw, minimum height=1ex] (TAG) {#1};
+\end{tikzpicture}}
+
+
+\usetikzlibrary{shapes.geometric}
+\newcommand{\tagf}[2][]{
+{
+\scalefont{0.8}
+\begin{tikzpicture}[baseline={(TAG.base)}]
+\node[draw,#1] (TAG) {#2\strut};
+\end{tikzpicture}
+}
+}
+
+\tikzset{My Tag Style/.style={blue!80, 
+         fill=blue!20,  
+         rounded corners}}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{times} 
+%\oddsidemargin -.5in
+%\evensidemargin -.5in
+%\textwidth=6.0in
+\itemsep=0in
+\parsep=0in
+
+\newcommand{\jobdes}[3]{{\bf \large #1\hspace{2ex}}{{\em \small #2}}{\hfill #3}}
+%use like \jobdes{job title}{company, location}{dates}
+
+\newcommand{\osection}[1]{\section{\sc {\color{SOrange}\vspace{-0.60cm} \textbf{#1}\\}}}
+
+\usepackage{changepage}
+
+\newenvironment{changemargin}[2]{\begin{list}{}{
+\setlength{\topsep}{0pt}\setlength{\leftmargin}{0pt}
+ \setlength{\rightmargin}{0pt}
+ \setlength{\listparindent}{\parindent}
+ \setlength{\itemindent}{\parindent}
+ \setlength{\parsep}{0pt plus 1pt}
+ \addtolength{\leftmargin}{#1}\addtolength{\rightmargin}{#2}
+ }\item }{\end{list}}
+
+
+
+\begin{document}
+
+\name{{\color{SOrange}Oz Nahum Tiram, M.Sc. }} 
+
+% To change the name size change 
+% \def\namefont{\large\bf} to for example
+% \def\namefont{\Large\bf}
+
+\address{ \begin{tabular}{ll}
+xxxxxxstr. 10            & {\it Land-line:}  +49 891 xxxxxx \\            
+8xx37 München & {\it Mobile:}                +49 176 xxxxx294 \\         
+ & {\it E-mail:}  nahumoz@gmail.com\\       
+ & {\it WWW:} linuxpixies.blogspot.com\\ 
+ &\hspace{2.7em}             \\     
+\end{tabular}}
+
+% for a simple format
+% \address{+1 321 223 2223 || jackie@tran.com}
+% \address{Someville, Someland }
+
+\begin{resume}
+
+% \vspace{0.60cm}
+
+\begin{changemargin}{-0.7cm}{-2.3cm}
+{\setlength{\fboxsep}{18pt}
+\colorbox{blue!20}{
+\begin{minipage}{0.95\textwidth}
+
+\rmfamily
+%\ttfamily
+\begin{flushleft}
+\hspace{-0.54cm}{\scalefont{1.2}\textbf{\begin{Huge}\textquotedblleft\end{Huge}}}
+\\
+\vspace{-0.65cm}
+\begin{small}
+I strive to solve interesting problems. I like to find solutions which don't hunt you down two months later, 
+because you wanted some patchy solution that just works. That's exactly why I 
+wanted to start programming and why I use Linux. For me programming started as a way to process my data and
+do my university assignments in a faster way, so I could avoid the endless mouse clicks.
+These days I use programming to automate routine System Administration on 1000's of Machines, monitor failure
+and have fun orchestrating all these computers with simple and clean scripts.\textquotedblright
+\end{small}\end{flushleft}
+\end{minipage}
+}
+}
+\end{changemargin}
+
+\vspace*{-2.5mm}
+\vspace{0.50cm}
+
+\setlength\parindent{0pt}
+
+\osection{Professional Experience}
+\vspace{0.20cm}
+\jobdes{System Engineer}{Science+Computing AG}{January 2011 - Current}
+\vspace{0.20cm}
+\begin{itemize}
+ \item Install and Configure Windows and Linux (Red Hat 5,6 and CentOS) Workstations.
+ \item Install and Configure HPC Clusters.
+ \item Scripting: BASH, Python and Perl.
+ \item Backup tool: TSM Client\textbackslash Server support (On Windows and Linux).
+ \item Hardware and Software RAID configuration.
+ \item Monitoring (Nagios\textbackslash RRDtool) Queuing systems (Sun Grid Engine\textbackslash In house queuing system written in Python).
+ \item Windows\textbackslash Linux sharing (CIFS \& SAMBA).
+ \item 2nd level support for Engineers using CAE\textbackslash CAD software.
+ \item Install and configure MySQL databases.
+ \item Install and configure SAN such as AutoFS and AMD.
+ \item Maintain LDAP servers.
+ \item Actively responsible for packaging software in RPM, DEB and other packaging format.
+ \item Responsible for as much as 5000 computers (Workstations and cluster nodes) for renowned customers such Daimler, Porsche and BMW.
+\end{itemize}
+% Responsibilities included installation and configuration of Linux clusters and workstations, as well
+% as Windows workstations; Support users of CAE\textbackslash CAD and Parallel computation software; 
+% Backup solutions (IBM TIVOLY, Hardware and Software RAID configuration); Monitoring, Queuing systems,
+% Windows\textbackslash Linux sharing (CIFS \& SAMBA); Python, BASH, Perl Scripting.
+\par
+\vspace{-0.3cm}
+\hspace{0.2cm}
+\foreach \x in {SAMBA, Red Hat, Windows, NFS, Python, Shell, MySQL, Perl} {%
+    \tagf[My Tag Style]{\x}\hspace{-0.25cm}
+}
+
+\jobdes{Scientific Programmer }{Uni. British Columbia, Vancouver.}{May, 2010 - Oct., 2010}
+\vspace{0.20cm}
+\begin{itemize}
+\item Implement a sequential version of a reactive transport model (Ground water flow + Chemical reactions) using an existing 
+large and complex Fortran code. 
+\item Write a collection of Python scripts: to submit jobs on different cluster hosts with different input files, 
+to process the results and visualize them. 
+\item The results of the code work and benchmarking comparing to previous versions
+were submitted as M.Sc thesis.
+\end{itemize}
+\par
+\vspace{-0.3cm}
+\hspace{0.2cm}
+\foreach \x in {Fortran95, Makefile, GCC, Python, \LaTeX} {%
+    \tagf[My Tag Style]{\x}\hspace{-0.25cm}
+}
+
+
+\newpage
+\jobdes{System Administrator, Python Programmer\hspace{1.0ex}}{Uni. Tübingen, Germany}{Oct. 2008-April 2010}
+\\
+\begin{itemize}
+\item Install and configure home brewed 2 Debian clusters with 20 compute nodes.
+\item Setup Subversion  \& Trac servers. 
+\item Implement Python application to process GIS data and visualize the results (see blow MMSPy).
+\item Maintain firewalls to the Clusters and the TRAC server. 
+\end{itemize}
+\par
+\vspace{-0.3cm}\hspace{0.2cm}
+\foreach \x in {Debian, Trac, Subversion, Python, GDAL, GIS, IPTables, PfSense} {%
+    \tagf[My Tag Style]{\x}\hspace{-0.25cm}
+    }
+
+\jobdes{System Administrator}{Rankabove, Israel}{April, 2008 - August, 2008}
+\\
+\begin{itemize}
+ \item Configuration management of Windows, OSX desktops and Ubuntu\textbackslash Debian Servers.
+ \item Install and maintain Bugzilla for our clients.
+ \item Package software (DEB format) for deployment.
+\end{itemize}
+\par
+\vspace{-0.3cm}\hspace{0.2cm}
+\foreach \x in {Debian, Packaging, Bugzilla, Ubuntu, Shell, Python, OSX, Windows} {%
+    \tagf[My Tag Style]{\x}\hspace{-0.25cm}}
+
+\osection{Education}
+\vspace{0.7cm}
+\jobdes{M. Sc. Applied Env. Geosciences}{Universität Tübingen, Germany}{October 2008 - October 2010}\vspace{0.2cm}
+\\
+{\bf Thesis Title:}\\{\em Implementation of Sequential Non Iterative approach in MIN3P reactive 
+transport code and comparison of Global Implicit Method}, final GPA 1.6.
+
+%\vspace{-.1cm}
+% {\em Matlab Instructor} \hfill {\bf October, 2009 - February, 2010}\\
+% Co-taught graduate level course for the Master of Applied Environmental Geosciences in
+% Matlab Programming. Helped instructing student during classes.  
+% \vspace*{.05in}  
+
+% {\em Research Assistant, HiWi} \hfill {\bf October, 2008 - April, 2010}\\
+% Support for Hydrogeology Work Group. Installed, configured and maintained 2 Linux Clusters used to perform 
+% complex large scale watershed modeling. Supervisor: Dr. Claudius Bürger.\\
+% Support for DSITE Work Group. Implemented a GIS application using MapServer, 
+% Python and GDAL library. Supervisors: Dr. Michael Finkel, Dipl. Geol. Maximilian Morio.
+
+% \vspace*{-.2cm}  
+
+% {\bf Hebrew University}, Jerusalem, Israel \hfill {\bf October, 2007 - August, 2008}\\
+% {\em M. Sc. Cand. Oceanography, Research Assistant}\\
+% I have attended advanced courses in Oceanography, as well as practical field and lab
+% work on $CO_2$ cycles and productivity and past climate changes.
+% %  As a
+% research assistant I was a part of team that studied biological calcification
+% processes in the oceans, and used chemical proxies to deduce past climate changes.
+\jobdes{B.Sc. Geology}{Hebrew University, Jerusalem}{October, 2003 - March, 2008}\\
+{\em B.Sc. Final GPA 88/100.}\\
+\vspace*{-.2cm}  
+
+\osection{Computer Skills Summary}
+\textbf{Programming Languages}:  Python, Matlab\textbackslash Octave, BASH, Perl, R, JAVA, \LaTeX, C and FORTRAN\\
+\textbf{Applications}: git, Subversion, ArcGIS, QGIS, MapServer. \\
+\textbf{Operating Systems}:   Red Hat\textbackslash Debian, *BSD, AIX, Windows, OSX\\
+\textbf{Server Side Applications}: Apache, MySQL, SAMBA, Subversion, Trac, Apache, IBM Tivoli SM, NFS \& AutoFS,  
+BIND, LDAP\textbackslash NIS.\\
+\textbf{Configuration Management \& Monitoring}: Salt-Stack, Chef, Fabric, Nagios.
+\osection{Open Source Projects}
+\textbf{MMSPy}: Remediation and Planning Conflict analysis algorithm developed in Python using GDAL. \\
+Libraries and tools used: Python, NumPy SciPy, Matplotlib, GDAL.
+\texttt{https://github.com/oz123/mmspy}
+
+\vspace*{-.2cm}  
+\textbf{Pwman3}: Console based password management application \\
+Libraries and tools used: Python, SQLite, MySQL.
+\texttt{https://github.com/pwman3/pwman3}\\
+
+
+\osection{Honors and Awards}
+\$4000 U. of British Columbia, Department Earth Ocean Sciences, M. Sc. Research. \hfill \textbf{2010} \\
+\$1000  Hebrew U., Prochter Foundation M. Sc. Research. \hfill \textbf{2008} \\
+\$2000  Hebrew U., Academy-Community Partnership for Social Change. \hfill  \textbf{2007} \\
+	   Honored Graduate of the Federman School of Public Policy.\hfill \textbf{2007} \\
+	   Representative for  Intel Science and Engineering Fair (Detroit, MI, USA) \hfill \textbf{2000}\\
+	   Representative for Israel, Europe's Young Scientists Fair (Thessaloniki, Greece) \hfill \textbf{1999}\\
+	   $2^{nd}$ Place, Israel's Young Scientists Contest. \hfill \textbf{1999} \\
+\vspace{-0.6cm}
+
+\osection{Language Skills}
+
+\begin{small}Mother language: Hebrew.\\
+
+\vspace{-.3cm}  
+
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+% \begin{center}
+\begin{tabular}{lllll}
+ Other languages$^*$: & \mc{2}{c}{Understanding} & \mc{1}{c}{Speaking} & \mc{1}{c}{Writing}\\
+  & Listening & Reading &  & \\
+English & C2 & C2 & C2 & C2\\
+German & C1 & C1 & C1 & B2
+\end{tabular}
+% \end{center}
+\end{small}\\
+\vspace{-.3cm}
+\begin{footnotesize}$^*$ Evaluation according to Common European Framework of Reference (CEF). 
+\end{footnotesize}
+
+\osection{Driving License}
+ PKW, Private Auto, Class B.
+
+\osection{Work Permit}
+
+Eligible to work and live in Germany and in Canada.
+\end{resume}
+\end{document}
+
